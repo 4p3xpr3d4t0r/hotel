@@ -22,6 +22,7 @@ import { ShowhotelComponent } from './hotel/showhotel/showhotel.component';
 import { RoomdashComponent } from './rooms/roomdash/roomdash.component';
 import { ShowroomComponent } from './rooms/showroom/showroom.component';
 import { BookingformComponent } from './bookingform/bookingform.component';
+import {CountryService} from './shared/country.service';
 
 
 
@@ -52,7 +53,7 @@ import { BookingformComponent } from './bookingform/bookingform.component';
 
     }),
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
