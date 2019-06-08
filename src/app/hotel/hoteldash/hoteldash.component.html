@@ -1,9 +1,26 @@
 <div class="container-fluid">
+  <div class="row">
+    
+  
+      <div class="col-2">
+          <br>
+          <br>
+          <form class="form-inline">
+          
+              <input class="form-control" name="searchInput" placeholder="search" #searchInput="ngModel" [(ngModel)]="searchText">
+            </form>
+      </div>
+
+  <div class="col-10">
   <div class="blogs-section pt-5">
       <div class="haran"><h2>The Available Hotels</h2></div>
     <div class="blog-list mb-5 mt-5">
         <div class="container card-columns">
-            <div class="card blog shadow-sm m-2" *ngFor="let country of countries">
+          <ng-container *ngFor="let country of countries">
+            <div class="card blog shadow-sm m-2" *ngIf="filerCondition(country)">
+            
+            
+
       <!-- <div class="container card-columns" *ngIf="articles">
         <div class="card blog shadow-sm m-2"  *ngFor="let blog of articles "> -->
             <!-- <span class="edit-link pos-abs py-1 px-2" *ngIf="blog.value.data.uid == auth.currentUserId"><a href="/editfarmerpage/{{blog.value.key}}">Edit</a></span> -->
@@ -15,19 +32,23 @@
 
             <blockquote class="blockquote mb-0">
               <!-- <p class="card-text">{{blog.value.data.description | slice:0:150 }}...</p> -->
-              <p class="card-text">{{country.totalRooms}}</p>
+              <p class="card-text">{{country.location}}</p>
 
               <!-- <footer class="blockquote-footer">by <cite title="Source Title">{{blog.value.user.fullname}}</cite></footer> -->
             </blockquote>
             <div class="text-right center">
               <!-- <a href="/viewfarmerpage/{{blog.value.key}}" class="btn btn-light text-info read-more">View rooms</a> -->
-              <a href="" class="btn btn-light text-info read-more">View rooms</a>
+              <a href="" class="btn btn-light text-info read-more" (click)="newCountry(country)">Hotel Details</a>
 
             </div>
           </div>
          
         </div>
+      </ng-container>
       </div>
     </div>
   </div>
+  </div>
+  
+</div>
 </div>
