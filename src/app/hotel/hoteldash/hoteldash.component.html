@@ -1,19 +1,23 @@
 <div class="container-fluid">
-  <div class="row">
+  
     
   
-      <div class="col-2">
-          <br>
-          <br>
-          <form class="form-inline">
-          
-              <input class="form-control" name="searchInput" placeholder="search" #searchInput="ngModel" [(ngModel)]="searchText">
-            </form>
-      </div>
+      
 
-  <div class="col-10">
+  
   <div class="blogs-section pt-5">
+      <div class="row">
+          <div class="col-10">
       <div class="haran"><h2>The Available Hotels</h2></div>
+          </div>
+          <div class="col-2">
+              <br>
+              <br>
+              <form class="form-inline">
+              
+                  <input class="form-control" name="searchInput" placeholder="search" #searchInput="ngModel" [(ngModel)]="searchText">
+                </form>
+          </div>
     <div class="blog-list mb-5 mt-5">
         <div class="container card-columns">
           <ng-container *ngFor="let country of countries">
@@ -38,7 +42,7 @@
             </blockquote>
             <div class="text-right center">
               <!-- <a href="/viewfarmerpage/{{blog.value.key}}" class="btn btn-light text-info read-more">View rooms</a> -->
-              <a href="" class="btn btn-light text-info read-more" href="/bookingform/{{country._id}}">Hotel Details</a>
+              <a href="" class="btn btn-light text-info read-more" href="/showhotel/{{country._id}}">Hotel Details</a>
 
             </div>
           </div>
@@ -46,7 +50,7 @@
         </div>
       </ng-container>
       </div>
-    </div>
+    
   </div>
   </div>
   
