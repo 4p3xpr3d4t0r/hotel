@@ -23,6 +23,9 @@ export class CountryService {
   deleteCountry(id:string){
     return this.http.delete(this.baseUri+"/delete/"+id,{headers:this.headers});
   }
+  readOneCountry(id:string){
+    return this.http.get(this.baseUri+"/readOne/"+id,{headers:this.headers});
+  }
 
   setter(country:Country){
     this.country = country;

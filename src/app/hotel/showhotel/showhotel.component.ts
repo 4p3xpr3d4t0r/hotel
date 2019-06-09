@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {CountryService} from '../../shared/country.service';
-import {Router} from '@angular/router';
+import {Router,ActivatedRoute,Params} from '@angular/router';
 import {Country} from '../../country';
+import {BookingService} from '../../booking.service';
+import {Booking} from '../../booking';
 
 @Component({
   selector: 'app-showhotel',
@@ -11,17 +13,33 @@ import {Country} from '../../country';
 export class ShowhotelComponent implements OnInit {
   
 
-  private country:Country;
+  private countries:Country[];
+  private oneCountry:Country;
 
-  constructor(private _countryService:CountryService) {}
+  constructor(private _countryService:CountryService,private route:ActivatedRoute) {
+    
+  }
 
 
     ngOnInit() {
-      this.setCountry();
+      const id: string = this.route.snapshot.params.id;
+      //const url: string = route.snapshot.url.join('');
+      //const user = route.snapshot.data.user;
+      console.log(id);
+      this.readCountries(id);
     }
 
-    setCountry(){
-      this.country = this._countryService.getter();
+    readCountries(id:string){
+      this._countryService.readOneCountry(id).subscribe(
+        data=>{
+          
+          this.oneCountry = data['msg'];
+          console.log(this.oneCountry);
+        },
+        error=>{
+          console.log(error);
+        }
+      )
     }
     
 }
