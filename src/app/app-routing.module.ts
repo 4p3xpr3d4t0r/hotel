@@ -10,6 +10,7 @@ import { ShowroomComponent } from './rooms/showroom/showroom.component';
 
 import { BookingformComponent } from './bookingform/bookingform.component';
 const routes: Routes = [
+  { path: '', component: HoteldashComponent },
   { path: 'bookingform', component: BookingformComponent },
 
   { path: 'roomdash', component: RoomdashComponent },
