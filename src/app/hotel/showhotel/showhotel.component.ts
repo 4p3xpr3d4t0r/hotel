@@ -22,11 +22,7 @@ export class ShowhotelComponent implements OnInit {
 
 
     ngOnInit() {
-      const id: string = this.route.snapshot.params.id;
-      //const url: string = route.snapshot.url.join('');
-      //const user = route.snapshot.data.user;
-      console.log(id);
-      this.readCountries(id);
+      
     }
 
     readCountries(id:string){

@@ -20,8 +20,7 @@
           </div>
     <div class="blog-list mb-5 mt-5">
         <div class="container card-columns">
-          <ng-container *ngFor="let country of countries">
-            <div class="card blog shadow-sm m-2" *ngIf="filerCondition(country)">
+            <div class="card blog shadow-sm m-2" >
             
             
 
@@ -32,23 +31,22 @@
           <img class="card-img-top" src="/assets/img/hotel.jpeg" alt="Card image cap">
           <div class="card-body">
             <!-- <h5 class="card-title"><a class="card-link" href="/viewfarmerpage/{{blog.value.key}}">{{ blog.value.user.fullname }}</a></h5> -->
-            <h5 class="card-title"><a class="card-link" href="">{{country.name}}</a></h5>
+            <h5 class="card-title"><a class="card-link" href="">Name Tes</a></h5>
 
             <blockquote class="blockquote mb-0">
               <!-- <p class="card-text">{{blog.value.data.description | slice:0:150 }}...</p> -->
-              <p class="card-text">{{country.location}}</p>
+              <p class="card-text">Colombo</p>
 
               <!-- <footer class="blockquote-footer">by <cite title="Source Title">{{blog.value.user.fullname}}</cite></footer> -->
             </blockquote>
             <div class="text-right center">
               <!-- <a href="/viewfarmerpage/{{blog.value.key}}" class="btn btn-light text-info read-more">View rooms</a> -->
-              <a href="" class="btn btn-light text-info read-more" href="/showhotel/{{country._id}}">Hotel Details</a>
+              <a href="" class="btn btn-light text-info read-more" href="/showhotel">Hotel Details</a>
 
             </div>
           </div>
          
         </div>
-      </ng-container>
       </div>
     
   </div>

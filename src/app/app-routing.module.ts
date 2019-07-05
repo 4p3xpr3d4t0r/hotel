@@ -10,13 +10,13 @@ import { ShowroomComponent } from './rooms/showroom/showroom.component';
 
 import { BookingformComponent } from './bookingform/bookingform.component';
 const routes: Routes = [
-  { path: 'bookingform/:id', component: BookingformComponent },
+  { path: 'bookingform', component: BookingformComponent },
 
   { path: 'roomdash', component: RoomdashComponent },
   { path: 'viewroom', component: ShowroomComponent},
 
   { path: 'hoteldash', component: HoteldashComponent },
-  { path: 'showhotel/:id', component: ShowhotelComponent },
+  { path: 'showhotel', component: ShowhotelComponent },
 ];
 
 @NgModule({
